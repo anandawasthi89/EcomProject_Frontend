@@ -1,0 +1,41 @@
+<div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+  
+        <img [src]="RandomImage" alt="Random slide" style="width: 100%; height: 60vh">
+  
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+  
+        <form (ngSubmit)="registerUser()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Username</label>
+            <input [(ngModel)]="newUser.name" name = "name" type="text" class="form-control" id="text">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input [(ngModel)]="newUser.email" name = "email" type="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input [(ngModel)]="newUser.password" name = "password" type="password" class="form-control" id="Password">
+          </div>
+          <div class="mb-3">
+            <label for="Confirm-Password" class="form-label">Confirm Password</label>
+            <input [(ngModel)]="conpass" name = "conpass" type="password" class="form-control" id="Confirm-Password">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="Check">
+            <label class="form-check-label" for="check">Subscribe to daily offers</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+          <div class="mb-3">
+            <a href="/login" class="link-primary">Already a user</a>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div>

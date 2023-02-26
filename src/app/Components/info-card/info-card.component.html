@@ -1,0 +1,32 @@
+<div class="card-wrapper">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{product.slidetitle}}</mat-card-title>
+      <mat-card-subtitle>
+        {{product.slideDesc}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image style="width: 150px;" [src]="product.imgurl" alt="Product Image" >
+    <mat-card-content>
+      <p>
+        {{product.slideDesc}}
+      </p>
+    </mat-card-content>
+    <mat-card-subtitle>
+      <label>Cost: </label>{{product.Cost}}
+    </mat-card-subtitle>
+    <mat-card-actions>
+      <button mat-raised-button *ngIf="!AddButtonClicked" color="accent" (click)="getBuyOptions()">Add</button>
+      <button mat-icon-button *ngIf="AddButtonClicked">
+        <mat-icon aria-label="add" (click)="add()">add</mat-icon>
+      </button>
+      <input matInput *ngIf="AddButtonClicked" placeholder="0" [(ngModel)]="product.quantity" maxlength="2" size="4">
+      <button mat-icon-button *ngIf="AddButtonClicked">
+        <mat-icon aria-label="remove" (click)="sub()">remove</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon aria-label="shopping cart" (click)="addToCart()">shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

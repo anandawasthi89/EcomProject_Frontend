@@ -1,0 +1,12 @@
+<div class="container">
+        <app-carousel-template [SlidesList]="OfferAddDetails" [StyleHeight]="CarouselHeight">
+        </app-carousel-template>
+</div>
+<div class="container p-1"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor = "let DL of DataList">
+            <app-info-card [product] = "DL"></app-info-card>
+        </div>
+    </div>
+</div> <!-- /container -->

@@ -1,0 +1,11 @@
+<ngb-carousel *ngIf="SlidesList">
+    <ng-template ngbSlide *ngFor="let SL of SlidesList">
+        <div class="picsum-img-wrapper">
+            <img [src]="SL.imgurl" alt="Random slide" class="mh-100" style="width: 100%;" [style.height] = "StyleHeight">
+        </div>
+        <div class="carousel-caption">
+            <h3 *ngIf="SL.slidetitle">{{SL.slidetitle}}</h3>
+            <p *ngIf="SL.slideDesc">{{SL.slideDesc}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>

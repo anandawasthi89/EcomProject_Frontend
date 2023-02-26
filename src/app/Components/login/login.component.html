@@ -1,0 +1,32 @@
+<div class="row align-items-md-stretch">
+  <div class="col-md-6">
+    <div class="h-100 p-5 bg-light border rounded-3">
+      <app-carousel-template [SlidesList]="OfferAddDetails"></app-carousel-template>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+      <form (ngSubmit) = "submitForm()">
+        {{LoginData | json}}
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input [(ngModel)]="LoginData.email" name = "email"
+           type="email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+          <label for="Password" class="form-label">Password</label>
+          <input [(ngModel)]="LoginData.password" name = "password" type="password" class="form-control" id="Password">
+        </div>
+        <div class="mb-3 form-check">
+          <input [(ngModel)]="LoginData.saveCreds" name = "saveCreds" type="checkbox" class="form-check-input" id="Check">
+          <label class="form-check-label" for="check">Remember Credentials</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+          <a href="/Register" class="link-primary">Not yet registered</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

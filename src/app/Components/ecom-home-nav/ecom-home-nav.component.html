@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;" aria-label="Main navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">ECom Website</a>
+      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/Browse">Browse Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLoggedIn" routerLink="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLoggedIn" routerLink="/Register">New User</a>
+          </li>
+          <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" [class.disabled]="!isLoggedIn" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">{{Username}}</a>
+            <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item"  routerLink="/Bucket">My Bucket</a></li>
+              <li><a class="dropdown-item" href="/OrderHistory">Order History</a></li>
+              <li><a class="dropdown-item" href="/" (click)="logoutNow()">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex my-2 my-lg-0">
+          <input class="form-control mr-sm-b" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

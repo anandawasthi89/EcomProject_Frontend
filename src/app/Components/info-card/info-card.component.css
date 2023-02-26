@@ -1,0 +1,11 @@
+.list-group-item{
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0ch;
+}
+.card-body{
+    background-color: lightgray;
+}
+.list-group-item{
+    background-color: lightgray; 
+}
